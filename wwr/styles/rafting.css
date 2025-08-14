@@ -1,10 +1,12 @@
 :root {
-  --primary-color: #0077B6;
-  --secondary-color: #F1F1F1;
-  --accent1-color: #F77F00;
-  --accent2-color: #2A9D8F;
+  --primary-color: #003366; /* A dark navy blue for text and accents */
+  --secondary-color: #E0F7FA; /* A very light cyan for backgrounds */
+  --accent1-color: #008080; /* A dark teal for highlights */
+  --accent2-color: #005A8D; /* A medium blue */
   --heading-font: 'Montserrat', sans-serif;
   --body-font: 'Roboto', sans-serif;
+  --text-dark: #121212; /* A true dark color for body text */
+  --text-light: #ffffff; /* Pure white for light text */
 }
 
 * {
@@ -15,7 +17,7 @@
 
 body {
   font-family: var(--body-font);
-  color: var(--accent1-color);
+   color: var(--text-dark);
 }
 
 header, main, footer {
@@ -23,9 +25,14 @@ header, main, footer {
   margin: 0 auto;
 }
 
-h1, h2 {
+h1 {
   font-family: var(--heading-font);
-  color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+ h2 {
+  font-family: var(--heading-font);
+  color: var(--accent2-color);
 }
 
 nav, p, section, article {
@@ -38,8 +45,8 @@ header {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  background-color: var(--primary-color);
-  color: var(--accent2-color);
+  background-color: var(--primary-color); /* Dark blue background */
+  color: var(--text-light); /* White text */
   padding: 16px;
 }
 
@@ -62,8 +69,8 @@ nav ul {
 }
 
 nav a {
-  text-decoration: none;
-  color: var(--accent2-color);
+  text-decoration: underline;
+  color: var(--text-light); /* White text */
   font-weight: bold;
   position: relative;
   transition: color 0.3s ease;
@@ -76,20 +83,19 @@ nav a::after {
   bottom: -2px;
   width: 100%;
   height: 2px;
-  background-color: var(--accent1-color);
+  background-color: var(--secondary-color);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
 }
 
 nav a:hover {
-  color: var(--accent1-color);
+  color: var(--secondary-color);
 }
 
 nav a:hover::after {
   transform: scaleX(1);
 }
-
 
 
 /* Hero Section */
@@ -113,8 +119,8 @@ nav a:hover::after {
   width: 100%;
   padding: 16px;
   text-align: center;
-  background-color: var(--accent1-color);
-  color: #fff;
+  background-color: var(--secondary-color); /* Light background for h1 */
+  color: var(--primary-color); /* Dark text for h1 */
   font-size: 40px;
   opacity: 0.9;
   z-index: 2;
@@ -128,7 +134,7 @@ nav a:hover::after {
   padding: 16px;
   max-width: 800px;
   z-index: 1;
-  color: var(--accent2-color);
+  color: var(--text-dark);
 }
 
 .hero article img {
@@ -155,7 +161,7 @@ nav a:hover::after {
 }
 
 .history-title {
-  grid-column: 1 / 4; /* spans all three columns */
+  grid-column: 1 / 4;
   font-size: 32px;
   color: var(--primary-color);
   margin-bottom: 10px;
@@ -187,17 +193,17 @@ nav a:hover::after {
   border: none;
 }
 
-/*meet team section*/
+/* meet team section */
 .team-section {
   padding: 2rem;
-  background-color: #f0f8ff;
+  background-color: var(--secondary-color);
   text-align: center;
 }
 
 .team-section h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
-  color: #004466;
+  color: var(--primary-color);
 }
 
 .team {
@@ -222,83 +228,82 @@ nav a:hover::after {
 .team figcaption {
   margin-top: 0.5rem;
   font-weight: bold;
-  color: #333;
+  color: var(--text-dark);
 }
 
 .team figcaption span {
   display: block;
   font-size: 0.9rem;
-  color: #666;
+  color: var(--text-dark);
 }
 
 /*send us message section */
 .contact-form {
-  background-color: #e6f2ff;
-  padding: 32px; /* 2rem → 32px */
+  background-color: var(--secondary-color);
+  padding: 32px;
   border-radius: 8px;
   max-width: 600px;
-  margin: 32px auto; /* 2rem → 32px */
+  margin: 32px auto;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .contact-form h2 {
   text-align: center;
-  margin-bottom: 24px; /* 1.5rem → 24px */
-  color: #004466;
+  margin-bottom: 24px;
+  color: var(--primary-color);
 }
 
 .contact-form form {
   display: flex;
   flex-direction: column;
-  gap: 16px; /* 1rem → 16px */
+  gap: 16px;
 }
 
 .contact-form label {
   font-weight: bold;
-  color: #333;
+  color: var(--text-dark);
 }
 
 .contact-form input,
 .contact-form select,
 .contact-form textarea {
-  padding: 8px; /* 0.5rem → 8px */
+  padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 16px; /* 1rem → 16px */
+  font-size: 16px;
 }
 
 .contact-form .newsletter {
   display: flex;
   align-items: center;
-  gap: 8px; /* 0.5rem → 8px */
+  gap: 8px;
   font-weight: normal;
 }
 
 .contact-form button {
-  background-color: #004466;
-  color: white;
-  padding: 12px; /* 0.75rem → 12px */
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  padding: 12px;
   border: none;
   border-radius: 4px;
-  font-size: 16px; /* 1rem → 16px */
+  font-size: 16px;
   cursor: pointer;
 }
 
 .contact-form button:hover {
-  background-color: #006699;
+  background-color: var(--accent1-color);
 }
 
 .contact-form label {
   display: block;
-  margin-bottom: 8px; /* tighter spacing */
+  margin-bottom: 8px;
 }
 
 #purpose label {
   display: block;
-  margin-bottom: 4px; /* reduced space between radios */
-  margin-left: 16px;  /* slight indent for visual grouping */
+  margin-bottom: 4px;
+  margin-left: 16px;
 }
-
 
 /* Adventures Section */
 .adventures {
@@ -335,9 +340,8 @@ nav a:hover::after {
 .adventure-gallery figcaption {
   margin-top: 8px;
   font-size: 14px;
-  color: #333;
+  color: var(--text-dark);
 }
-
 
 /* Footer */
 footer {
@@ -356,4 +360,259 @@ footer nav.socialmedia {
 footer nav.socialmedia img {
   width: 30px;
   height: auto;
+}
+
+footer p {
+  color: var(--text-dark);
+}
+
+/* Compare Our Trips Section */
+.compare-trips {
+  background-color: #fff;
+  padding: 32px;
+  margin: 40px auto;
+  max-width: 800px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.compare-trips h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+  color: var(--primary-color);
+}
+
+/* Table Styling */
+.compare-trips table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+.compare-trips th,
+.compare-trips td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+  font-size: 16px;
+  color: var(--text-dark);
+}
+
+.compare-trips th {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.compare-trips caption {
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 21px;
+  color: var(--accent2-color);
+}
+
+/* our feature section*/
+.featured-trips {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.featured-trips h2 {
+  font-size: 32px;
+  margin-bottom: 24px;
+  color: var(--primary-color);
+}
+
+.trip-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
+.trip-card {
+  flex: 1 1 30%;
+  max-width: 30%;
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.trip-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.trip-card h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+  color: var(--accent1-color);
+}
+
+.trip-card p {
+  font-size: 15px;
+  margin: 4px 0;
+  color: var(--text-dark);
+}
+/* our mission and offering */
+/* Mission & Offerings Section */
+.mission-offerings {
+  margin: 40px auto;
+  text-align: center;
+  max-width: 840px;
+}
+
+.mission-offerings h2 {
+  font-size: 28px;
+  color: var(--primary-color);
+  margin-bottom: 24px;
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.mission-item {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.mission-item img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.mission-item h3 {
+  font-size: 20px;
+  color: var(--accent1-color);
+  margin-bottom: 8px;
+}
+
+.mission-item p {
+  font-size: 16px;
+  color: var(--text-dark);
+}
+
+/* newsletter */
+
+.home-newsletter {
+  text-align: center;
+  background-color: var(--secondary-color);
+  padding: 40px 20px;
+  margin: 40px auto;
+  max-width: 600px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.home-newsletter h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: var(--text-dark);
+}
+
+.home-newsletter form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.home-newsletter .form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.home-newsletter label {
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: var(--text-dark);
+}
+
+.home-newsletter input {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.home-newsletter button {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  padding: 12px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.home-newsletter button:hover {
+  background-color: var(--accent1-color);
+}
+
+/* home cta */
+
+.home-cta {
+  background-color: var(--secondary-color);
+  padding: 40px 20px;
+  margin: 40px auto;
+  max-width: 840px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.cta-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.cta-text {
+  flex: 2;
+}
+
+.cta-text h2 {
+  font-size: 2em;
+  margin-bottom: 12px;
+  color: var(--primary-color);
+}
+
+.cta-text p {
+  font-size: 1.2em;
+  color: var(--text-dark);
+}
+
+.cta-button-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.home-cta-button {
+  padding: 12px 24px;
+  font-size: 1em;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  text-decoration: none;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.home-cta-button:hover {
+  background-color: var(--accent1-color);
 }
